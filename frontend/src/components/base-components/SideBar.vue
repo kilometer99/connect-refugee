@@ -119,9 +119,7 @@ const user = computed(() => authStore.user);
 const authenticated = computed(() => authStore.userIsLoggedIn);
 
 const mustNotIncludeSpace = (value) => !value.includes(" ");
-const passwordValid = helpers.regex(
-  /^([A-Za-z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,19}$/
-);
+const passwordValid = helpers.regex(/^[A-Za-z]\w{7,19}$/);
 
 const rules = computed(() => {
   return {
